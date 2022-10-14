@@ -1,0 +1,90 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Heebo', sans-serif;
+    scroll-behavior: smooth;
+}
+
+section{
+
+    width: 100%;
+    min-height: 105vh;
+    display: flex;
+    justify-content: center;
+    
+}
+
+h1{
+    font-size: 5rem;
+    line-height: 2;
+    font-family: 'Silkscreen', cursive;
+    font-weight: bold;
+
+}
+
+h2{
+    font-size: 2.2rem;
+}
+
+h3{
+    font-size: 1.5rem;
+
+}
+img{
+    width: 400px;
+    margin-bottom: 50px;
+    border: 12px solid black;
+}
+a{
+    text-decoration: none;
+    color: white;
+}
+
+a:hover{
+    color: grey;
+}
+/* Navbar */
+nav{
+    height: 64px;
+    width: 100%;
+    background-color: black;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    z-index: 10; /* Makes the Nav bar a higher priority that the image. (The nav bar goes over the images when sliding up or down*/
+
+}
+nav ul{
+    display: flex;
+    list-style: none;
+
+}
+nav ul li{
+    margin: 30px;
+}
+
+#title {
+    font-size: 1.8rem;
+    font-family: 'Silkscreen', cursive;
+    
+}
+
+/* Home Section */
+
+.home{
+    background-color: yellowgreen;
+}
+
+.home div{
+    transform: translateY(64px);
+    margin: 5%;
+}
+
+/* About Section */
+
+.about div {
+    margin: 8%;
+}
