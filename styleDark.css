@@ -4,6 +4,7 @@
     box-sizing: border-box;
     font-family: 'Heebo', sans-serif;
     scroll-behavior: smooth;
+    background-color: forestgreen;
 }
 
 section{
