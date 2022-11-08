@@ -10,19 +10,31 @@
         <link href="https://fonts.googleapis.com/css2?family=Heebo&family=Silkscreen&display=swap" rel="stylesheet">
 
         <script src="https://kit.fontawesome.com/77fe2f09ee.js" crossorigin="anonymous"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3/jquery.min.js"></script>
+
     </head>
     <body>
         <noscript>
             <h1> sorry, you need javascript to run this page</h1>
         </noscript>
         <a href="#" onclick="alert('welcome')"> click me!</a>
-        <p id="demo"> Hello</p>
+
+        <p id="demo"> Hello</p> id="keypressed_"
+        <p id="keypressed_tect"> no key pressed</p>
+
+
         <button onclick="document.getElementById('demo').innerHTML='new text'; ">change text</button>
+        <button onclick="document.getElementById('demo').innerHTML='Hello';"> revert text</button>
         <button onclick="myFun();">Alert button</button>
         <button onclick="darkMode();">Dark Mode</button>
 
+        <p>line 1</p>
+        <p id="p2">line 2</p>
+        <p>line 3</p>
+        <button>click me</button>
+
         <script src="script.js">
     
-        </script>
+        </script>  
     </body>
 </html>
