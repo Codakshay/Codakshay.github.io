@@ -87,4 +87,8 @@
   .about__img img {
     width: 200px;
     border-radius: .5rem;
-  }'
+  }
+  
+  .projects .project-row .project-right .project-links {
+    margin-top: 1rem;
+  }
