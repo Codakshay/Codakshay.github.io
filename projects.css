@@ -34,7 +34,7 @@
     padding:1em .5em .5em
 }
 
-.projects .project .project-image-wrapper img {
+.projects .project .project-image-wrapper img a {
     flex-grow: 1;
     display: block;
     height: 10.5em;
