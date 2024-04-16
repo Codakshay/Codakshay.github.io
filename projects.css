@@ -84,7 +84,7 @@
     justify-self: center;
   }
   
-  .about__img img {
+  .about__img img a {
     width: 200px;
     border-radius: .5rem;
   }
