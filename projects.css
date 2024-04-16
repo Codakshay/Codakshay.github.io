@@ -1,4 +1,4 @@
-.section-portfolio .projects {
+.projects {
     margin: auto;
     display: grid;
     grid-gap: 1em;
@@ -6,12 +6,12 @@
 }
 
 @media (max-width: 450px) {
-    .section-portfolio .projects {
+    .projects {
         grid-template-columns:1fr
     }
 }
 
-.section-portfolio .projects .project {
+.projects .project {
     box-shadow: 0 3px 10px rgba(50, 50, 50, .05);
     border: 1px solid #f7f7f7;
     border-radius: 5px;
@@ -22,7 +22,7 @@
     flex-direction:column
 }
 
-.section-portfolio .projects .project .project-images {
+.projects .project .project-images {
     display: flex;
     background-color: #eee;
     width: 100%;
@@ -30,11 +30,11 @@
     justify-content:center
 }
 
-.section-portfolio .projects .project .project-image-wrapper {
+.projects .project .project-image-wrapper {
     padding:1em .5em .5em
 }
 
-.section-portfolio .projects .project .project-image-wrapper img {
+.projects .project .project-image-wrapper img {
     flex-grow: 1;
     display: block;
     height: 10.5em;
@@ -46,12 +46,12 @@
     border-bottom-right-radius:0
 }
 
-.section-portfolio .projects .project h3 {
+.projects .project h3 {
     margin-top: 0;
     text-align:center
 }
 
-.section-portfolio .projects .project .project-description {
+.projects .project .project-description {
     display: flex;
     flex-grow: 1;
     flex-direction: column;
@@ -59,11 +59,11 @@
     border-top:1px solid #ddd
 }
 
-.section-portfolio .projects .project .project-description .project-body {
+.projects .project .project-description .project-body {
     flex-grow:1
 }
 
-.section-portfolio .projects .project .project-description .project-skills {
+.projects .project .project-description .project-skills {
     opacity: .5;
     font-size: .8em;
     margin-top:1em
