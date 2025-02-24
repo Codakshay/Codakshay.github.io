@@ -1,59 +1,111 @@
-$(document).ready(function() {
-//All of jquery code
+document.addEventListener("DOMContentLoaded", function () {
+    const animal = document.getElementById("animatedAnimal");
+    let isFollowingCursor = false;
 
-//cool stuff
-// mouseenter,hover or mouseleave - mouse hovers
-//dbl - double click
-//fadeToggle(speed) - faded
-
-    $("button").click( function() {
-        $("#p").toggle();   // the hashtag lets you use with an id and dots for classes and square bracks for elenebts like href
-        let div = $("div");
-        //div.animate({},)
-    }
-    );
-
-}
-);
-
-
-document.getElementById('demo').innerHTML='new text';
-// document.getElementById('demo').id = "demo2"
-document.getElementById('demo').style.color = "red";
-// document.getElementById('demo').outerHTML = "<button> something to press </button>"
-
-
-function myFun(){
-    alert("WARNING")
-}
-
-
-function darkMode(){
-    document.getElementById("pagestyle").setAttribute("href", "./styleDark.css")
-}
-
-var a = 10;
-let b = 20;
-const c = 30; //cant be changed
-
-var a = 20;
-
-console.log(a+b+c)
-
-function key_pressed(input) {
-    console.log(input);
-    document.getElementById("keypressed_text").innerHTML = input;
-}
-
-const key = function keyEvent(e) {
-
-    key_pressed();
-    if(e.key === "f"){
-        alert("f key pressed");
-
+    function moveAnimalRandomly() {
+        if (!isFollowingCursor) {
+            const x = Math.random() * (window.innerWidth - 100);
+            const y = Math.random() * (window.innerHeight - 100);
+            animal.style.left = `${x}px`;
+            animal.style.top = `${y}px`;
+        }
     }
 
+    // Move the animal randomly every 3 seconds
+    setInterval(moveAnimalRandomly, 3000);
 
-}
+    // Make the animal follow the cursor on click
+    animal.addEventListener("mousedown", function () {
+        isFollowingCursor = true;
+    });
 
-document.addEventListener("keypress", key);
+    document.addEventListener("mousemove", function (event) {
+        if (isFollowingCursor) {
+            animal.style.left = `${event.clientX}px`;
+            animal.style.top = `${event.clientY}px`;
+        }
+    });
+
+    // Release the animal back to wandering
+    document.addEventListener("mouseup", function () {
+        isFollowingCursor = false;
+    });
+
+    // Make the animal open a link when clicked
+    animal.addEventListener("click", function () {
+        window.open("https://example.com", "_blank"); // Change URL
+    });
+
+    // Start with a random position
+    moveAnimalRandomly();
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// document.addEventListener("DOMContentLoaded", function () {
+//     const animal = document.getElementById("animatedAnimal");
+//     let isFollowingCursor = false;
+
+//     function moveAnimalRandomly() {
+//         if (!isFollowingCursor) {
+//             const x = Math.random() * (window.innerWidth - 100);
+//             const y = Math.random() * (window.innerHeight - 100);
+//             createTextTrail(x, y); // Create text trail with old animation
+//             animal.style.left = `${x}px`;
+//             animal.style.top = `${y}px`;
+//         }
+//     }
+
+//     // Function to create a permanent clickable text trail
+//     function createTextTrail(x, y) {
+//         const textElement = document.createElement("a");
+//         textElement.className = "textTrail";
+//         textElement.style.left = `${x}px`;
+//         textElement.style.top = `${y}px`;
+//         textElement.innerHTML = getRandomText(); // Randomized text
+//         textElement.href = "https://example.com"; // Change to your desired link
+//         textElement.target = "_blank"; // Opens link in a new tab
+//         document.body.appendChild(textElement);
+//     }
+
+//     // Function to randomize text trail phrases
+//     function getRandomText() {
+//         const texts = ["Explore", "Click Me!", "Mystery Link", "Surprise", "Go Here!", "Secret", "Next Step"];
+//         return texts[Math.floor(Math.random() * texts.length)];
+//     }
+
+//     // Move the object randomly every 3 seconds
+//     setInterval(moveAnimalRandomly, 3000);
+
+//     // Make the object follow the cursor on click
+//     document.addEventListener("mousedown", function () {
+//         isFollowingCursor = true;
+//     });
+
+//     document.addEventListener("mousemove", function (event) {
+//         if (isFollowingCursor) {
+//             createTextTrail(event.clientX, event.clientY); // Leave clickable text trails
+//             animal.style.left = `${event.clientX}px`;
+//             animal.style.top = `${event.clientY}px`;
+//         }
+//     });
+
+//     // Release the object back to wandering
+//     document.addEventListener("mouseup", function () {
+//         isFollowingCursor = false;
+//     });
+
+//     // Start with a random position
+//     moveAnimalRandomly();
+// });
