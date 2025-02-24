@@ -1,155 +1,144 @@
+<!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <link rel="stylesheet" href="./projects.css">
-        <title>Akshay Nataraja | Work/Projects</title>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Works | Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        #works {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            max-height: 80vh; /* Set a max height to enable scrolling */
+            overflow-y: auto; /* Enables vertical scrolling */
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">My Portfolio</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="works.html" class="active">Works</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="resume.pdf">Resume</a></li>
+            </ul>
+        </nav>
+    </header>
 
-        <script src="https://kit.fontawesome.com/77fe2f09ee.js" crossorigin="anonymous"></script>
+    <section id="works">
+        <div class="work-card">
+            <div class="work-image">
+                <img src="project1.jpg" alt="Wi-Fi Smart Cat Feeder">
+            </div>
+            <h3>Wi-Fi Smart Cat Feeder</h3>
+            <div class="tags">
+                <span class="tag">IOT</span>
+                <span class="tag">Automation</span>
+            </div>
+            <p>A smart pet feeding system with multiple feeders communicating over Wi-Fi, ensuring only one dispenses food at a time.</p>
+        </div>
 
-      <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
-    </head>
+        <div class="work-card">
+            <div class="work-image">
+                <img src="project2.jpg" alt="Audit Risk PCA Clustering">
+            </div>
+            <h3>Audit Risk PCA Clustering</h3>
+            <div class="tags">
+                <span class="tag">Data Science</span>
+                <span class="tag">Automation</span>
+            </div>
+            <p>Implemented PCA on audit risk rating data to identify clusters, automating the annual audit schedule process.</p>
+        </div>
 
-
-<div class="projects" id="projects">
-      
-    <div class="wow fadeIn project animated" style="visibility: visible; animation-name: animation-fade-in;">
-      <div class="project-images " style="background-color: lightgreen">
-        <div class="project-image-wrapper">
-          <img src="" alt="" loading="lazy">
+        <div class="work-card">
+            <div class="work-image">
+                <img src="img/IMG_9657.JPG" alt="Multithreaded P2P File Sharing">
+            </div>
+            <h3>Multithreaded P2P File Sharing</h3>
+            <div class="tags">
+                <span class="tag">Networking</span>
+                <span class="tag">Security</span>
+            </div>
+            <p>Developed a peer-to-peer file-sharing system with parallel downloads, integrity checks, and optimized bandwidth usage.</p>
         </div>
         
-      </div>
-
-      <div class="project-description">
-        <h3>Course Scheduler Java GUI</h3>
-
-        <div class="project-body">
-          <p>A course scheduler application that allows admins to create course offerings and add/drop students within a semester. Students can schedule courses and join waitlists in varying semesters. Implemented using a Java GUI and data stored in Apache Derby (SQL) databases. </strong></p>
+        <div class="work-card">
+            <div class="work-image">
+                <img src="project4.jpg" alt="Machine Learning Fraud Detection">
+            </div>
+            <h3>Machine Learning Fraud Detection</h3>
+            <div class="tags">
+                <span class="tag">AI</span>
+                <span class="tag">Security</span>
+            </div>
+            <p>Built a fraud detection system using machine learning algorithms to identify fraudulent transactions in real-time.</p>
         </div>
 
-        <div class="project-skills">
-          <p>Skills: mySQL, Java</p>
-        </div>
-      </div>
-    </div>
-
-    
-    <div class="wow fadeIn project animated" style="visibility: visible; animation-name: animation-fade-in;">
-        <div class="project-images " style="background-color: #2696ef">
-          <div class="project-image-wrapper">
-            <img href="https://github.com/Codakshay/AI-in-American-Football" src="/img/digitalAthlete.png" alt="" loading="lazy" >
-            
-          </div>
-        
-      </div>
-
-      <div class="project-description" href="https://github.com/Codakshay/AI-in-American-Football" >
-        <h3>Artificial Intelligence in American Football</h3>
-
-        <div class="project-body">
-          <p>A portfolio of works relating to artificial intelligence (AI) in american football. It contains a literature review on present works that are about artificial intelligence in american football. Also, a recommendation report on the feasibility for implementing artificial intelligence in Penn State Men's Football. Finally, a instruction set on how to draft a succesful fantasy football team.</p>
+        <div class="work-card">
+            <div class="work-image">
+                <img src="project5.jpg" alt="Automated Data Dashboard">
+            </div>
+            <h3>Automated Data Dashboard</h3>
+            <div class="tags">
+                <span class="tag">Data Visualization</span>
+                <span class="tag">Automation</span>
+            </div>
+            <p>Developed a fully automated dashboard to track key metrics and visualize trends in large datasets.</p>
         </div>
 
-        <div class="project-skills">
-          <p>Skills: Android, C, Java</p>
-          <div class="project-links">
-            <a href="https://github.com/Codakshay/AI-in-American-Football" class="btn-blue-outline btn-small" target="_blank"> <i class="fab fa-github"></i> Code</a>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    
-    <div class="wow fadeIn project animated" style="visibility: visible; animation-name: animation-fade-in;">
-      <div class="project-images " style="background-color: #ff9800">
-        <div class="project-image-wrapper">
-          <img src="" alt="" loading="lazy">
-        </div>
-        
-      </div>
-
-      <div class="project-description">
-        <h3> brand</h3>
-
-        <div class="project-body">
-          <p>Yeaaah</p>
+        <div class="work-card">
+            <div class="work-image">
+                <img src="project6.jpg" alt="Blockchain Voting System">
+            </div>
+            <h3>Blockchain Voting System</h3>
+            <div class="tags">
+                <span class="tag">Blockchain</span>
+                <span class="tag">Security</span>
+            </div>
+            <p>Designed a secure blockchain-based voting system to ensure transparency and prevent election fraud.</p>
         </div>
 
-        <div class="project-skills">
-          <p>Skills: </p>
-        </div>
-      </div>
-    </div>
-
-    
-    <div class="wow fadeIn project animated" style="visibility: visible; animation-name: animation-fade-in;">
-      <div class="project-images " style="background-color: #cd192d">
-        <div class="project-image-wrapper">
-          <img src="" alt="" loading="lazy">
-        </div>
-        
-      </div>
-
-      <div class="project-description">
-        <h3>map interactive</h3>
-
-        <div class="project-body">
-          <p></p>
+        <div class="work-card">
+            <div class="work-image">
+                <img src="project7.jpg" alt="AI-Powered Chatbot">
+            </div>
+            <h3>AI-Powered Chatbot</h3>
+            <div class="tags">
+                <span class="tag">Artificial Intelligence</span>
+                <span class="tag">Automation</span>
+            </div>
+            <p>Developed an AI chatbot that interacts with users using natural language processing and deep learning.</p>
         </div>
 
-        <div class="project-skills">
-          <p>Skills: Chrome, PostgreSQL, Python, Django</p>
+        <div class="work-card">
+            <div class="work-image">
+                <img src="project8.jpg" alt="E-Commerce Recommendation System">
+            </div>
+            <h3>E-Commerce Recommendation System</h3>
+            <div class="tags">
+                <span class="tag">Machine Learning</span>
+                <span class="tag">Personalization</span>
+            </div>
+            <p>Created a recommendation engine that suggests products based on user preferences and purchase history.</p>
         </div>
-      </div>
-    </div>
+    </section>
 
-    
-    <div class="wow fadeIn project animated" style="visibility: visible; animation-name: animation-fade-in;">
-      <div class="project-images " style="background-color: #68b2c0">
-        <div class="project-image-wrapper">
-          <img src="img/projects/project-cloudreach-website.jpg" alt="" loading="lazy">
-        </div>
-        
-      </div>
+    <footer>
+        <p>&copy; 2025 My Portfolio. All rights reserved.</p>
+    </footer>
+</body>
+</html>
 
-      <div class="project-description">
-        <h3>Cloud</h3>
 
-        <div class="project-body">
-          <p></p>
-        </div>
 
-        <div class="project-skills">
-          <p>Skills: </p>
-        </div>
-      </div>
-    </div>
 
-    
-    <div class="wow fadeIn project animated" style="visibility: visible; animation-name: animation-fade-in;">
-      <div class="project-images " style="background-color: #ff5722">
-        <div class="project-image-wrapper">
-          <img src="img/projects/project-av-search-1.jpg" alt="" loading="lazy">
-        </div>
-        
-        <div class="project-image-wrapper">
-          <img src="img/projects/project-av-search-2.jpg" alt="" loading="lazy">
-        </div>
-        
-      </div>
 
-      <div class="project-description">
-        <h3>search</h3>
 
-        <div class="project-body">
-          <p></p>
-        </div>
-
-        <div class="project-skills">
-          <p>Skills: </p>
-        </div>
-      </div>
-    </div>
-  </div>
 
   
