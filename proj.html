@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Projects</title>
+  <!-- Google Font: Montserrat -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --pistachio: #93C572;
+      --pistachio-hover: #6BA459;
+    }
+    /* Global Styles */
+    body {
+      margin: 0;
+      font-family: 'Montserrat', sans-serif;
+      background-color: #F0EAD6; /* Eggshell background */
+      color: #333;
+      padding: 20px;
+      transition: background-color 0.3s, color 0.3s;
+    }
+    body.dark {
+      background-color: #333;
+      color: #ddd;
+    }
+    header {
+      position: relative;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    /* Header Controls */
+    .controls {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+    }
+    .controls a {
+      font-size: 16px;
+      text-decoration: none;
+      margin-left: 15px;
+      color: var(--pistachio);
+      transition: color 0.3s;
+    }
+    .controls a:hover {
+      color: var(--pistachio-hover);
+    }
+    header h1 {
+      font-size: 48px;
+      margin: 0;
+      color: var(--pistachio);
+    }
+    /* Tabs for filtering */
+    .tabs {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .tab {
+      display: inline-block;
+      margin: 0 10px;
+      padding: 8px 16px;
+      text-decoration: none;
+      color: var(--pistachio);
+      border: 1px solid var(--pistachio);
+      border-radius: 4px;
+      transition: background-color 0.3s, color 0.3s;
+      cursor: pointer;
+    }
+    .tab.active,
+    .tab:hover {
+      background-color: var(--pistachio);
+      color: #fff;
+    }
+    /* Projects Section: Two-column layout per project */
+    .project-list {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    .project {
+      display: flex;
+      flex-wrap: wrap;
+      margin-bottom: 30px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--pistachio);
+    }
+    .project:last-child {
+      border-bottom: none;
+    }
+    .project-image {
+      flex: 1 1 300px;
+      max-width: 300px;
+      margin-right: 20px;
+    }
+    .project-image img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+    .project-details {
+      flex: 2 1 400px;
+    }
+    .project-details h2 {
+      margin-top: 0;
+      font-size: 32px;
+      color: var(--pistachio);
+    }
+    .project-details p {
+      margin: 10px 0;
+    }
+    /* GitHub icon link styling */
+    .github-link {
+      text-decoration: none;
+      color: var(--pistachio);
+      transition: color 0.3s;
+    }
+    .github-link:hover {
+      color: var(--pistachio-hover);
+    }
+    .github-link svg {
+      width: 24px;
+      height: 24px;
+      vertical-align: middle;
+    }
+    /* Footer */
+    footer {
+      text-align: center;
+      margin-top: 40px;
+      font-size: 14px;
+      color: var(--pistachio);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="controls">
+      <a href="createPage.html">Home</a>
+      <a href="#" id="darkModeToggle">Toggle Dark Mode</a>
+    </div>
+    <h1>My Projects</h1>
+  </header>
+  
+  <!-- Tabs for filtering projects -->
+  <div class="tabs">
+    <a href="#" class="tab active" data-filter="all">All</a>
+    <a href="#" class="tab" data-filter="research">Research</a>
+    <a href="#" class="tab" data-filter="ux">UX</a>
+  </div>
+  
+  <section id="projects" class="project-list">
+    <!-- Project 1: Research -->
+    <div class="project" data-tag="research">
+      <div class="project-image">
+        <img src="project-one.jpg" alt="Project One Image">
+      </div>
+      <div class="project-details">
+        <h2>Project One</h2>
+        <p>This research project explores innovative design and development techniques.</p>
+        <a href="https://github.com/yourusername/project-one" class="github-link" target="_blank" aria-label="GitHub Repository for Project One">
+          <svg viewBox="0 0 24 24">
+            <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.38-1.333-1.747-1.333-1.747-1.087-.744.084-.729.084-.729 1.205.084 1.84 1.236 1.84 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.418-1.305.762-1.605-2.665-.3-5.467-1.335-5.467-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.524.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.4 3-.405 1.02.005 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.874.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.697.825.577C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+    
+    <!-- Project 2: UX -->
+    <div class="project" data-tag="ux">
+      <div class="project-image">
+        <img src="project-two.jpg" alt="Project Two Image">
+      </div>
+      <div class="project-details">
+        <h2>Project Two</h2>
+        <p>This UX project focuses on front-end design and usability enhancements.</p>
+        <a href="https://github.com/yourusername/project-two" class="github-link" target="_blank" aria-label="GitHub Repository for Project Two">
+          <svg viewBox="0 0 24 24">
+            <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.38-1.333-1.747-1.333-1.747-1.087-.744.084-.729.084-.729 1.205.084 1.84 1.236 1.84 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.418-1.305.762-1.605-2.665-.3-5.467-1.335-5.467-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.524.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.4 3-.405 1.02.005 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.874.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.697.825.577C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+    
+    <!-- Project 3: Research -->
+    <div class="project" data-tag="research">
+      <div class="project-image">
+        <img src="project-three.jpg" alt="Project Three Image">
+      </div>
+      <div class="project-details">
+        <h2>Project Three</h2>
+        <p>This research project demonstrates effective problem-solving and technical expertise.</p>
+        <a href="https://github.com/yourusername/project-three" class="github-link" target="_blank" aria-label="GitHub Repository for Project Three">
+          <svg viewBox="0 0 24 24">
+            <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.38-1.333-1.747-1.333-1.747-1.087-.744.084-.729.084-.729 1.205.084 1.84 1.236 1.84 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.418-1.305.762-1.605-2.665-.3-5.467-1.335-5.467-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.524.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.4 3-.405 1.02.005 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.874.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.697.825.577C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+    
+    <!-- Project 4: UX -->
+    <div class="project" data-tag="ux">
+      <div class="project-image">
+        <img src="project-four.jpg" alt="Project Four Image">
+      </div>
+      <div class="project-details">
+        <h2>Project Four</h2>
+        <p>This UX project focuses on creative design and front-end development techniques.</p>
+        <a href="https://github.com/yourusername/project-four" class="github-link" target="_blank" aria-label="GitHub Repository for Project Four">
+          <svg viewBox="0 0 24 24">
+            <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.38-1.333-1.747-1.333-1.747-1.087-.744.084-.729.084-.729 1.205.084 1.84 1.236 1.84 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.418-1.305.762-1.605-2.665-.3-5.467-1.335-5.467-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.524.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.4 3-.405 1.02.005 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.874.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.697.825.577C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+    
+    <!-- Project 5: Research -->
+    <div class="project" data-tag="research">
+      <div class="project-image">
+        <img src="project-five.jpg" alt="Project Five Image">
+      </div>
+      <div class="project-details">
+        <h2>Project Five</h2>
+        <p>An advanced research project leveraging state-of-the-art technologies to drive innovation.</p>
+        <a href="https://github.com/yourusername/project-five" class="github-link" target="_blank" aria-label="GitHub Repository for Project Five">
+          <svg viewBox="0 0 24 24">
+            <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.38-1.333-1.747-1.333-1.747-1.087-.744.084-.729.084-.729 1.205.084 1.84 1.236 1.84 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.418-1.305.762-1.605-2.665-.3-5.467-1.335-5.467-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.524.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.4 3-.405 1.02.005 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.874.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.697.825.577C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+    
+  </section>
+  
+  <footer>
+    <p>&copy; 2025 My Portfolio. All rights reserved.</p>
+  </footer>
+  
+  <script>
+    // Dark Mode Toggle
+    const toggleLink = document.getElementById('darkModeToggle');
+    toggleLink.addEventListener('click', function(e) {
+      e.preventDefault();
+      document.body.classList.toggle('dark');
+    });
+    
+    // Filter projects based on tab selection
+    const tabs = document.querySelectorAll('.tab');
+    const projects = document.querySelectorAll('.project');
+    
+    tabs.forEach(tab => {
+      tab.addEventListener('click', function(e) {
+        e.preventDefault();
+        // Remove active class from all tabs
+        tabs.forEach(t => t.classList.remove('active'));
+        // Add active class to clicked tab
+        this.classList.add('active');
+        
+        const filter = this.getAttribute('data-filter');
+        
+        projects.forEach(project => {
+          // Show all projects if filter is 'all'
+          if (filter === 'all') {
+            project.style.display = 'flex';
+          } else {
+            // Otherwise, show projects that match the filter, hide the rest.
+            if (project.getAttribute('data-tag') === filter) {
+              project.style.display = 'flex';
+            } else {
+              project.style.display = 'none';
+            }
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
