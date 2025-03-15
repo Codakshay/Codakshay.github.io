@@ -50,7 +50,7 @@
       margin: 0;
       color: var(--pistachio);
     }
-    /* Tabs for filtering */
+    /* Tabs for filtering projects */
     .tabs {
       text-align: center;
       margin-bottom: 30px;
@@ -128,12 +128,37 @@
       font-size: 14px;
       color: var(--pistachio);
     }
+    
+    /* MOBILE FRIENDLINESS */
+    @media (max-width: 768px) {
+      /* Stack project image and details vertically */
+      .project {
+        flex-direction: column;
+        align-items: center;
+      }
+      .project-image {
+        margin-right: 0;
+        margin-bottom: 15px;
+        max-width: 100%;
+      }
+      .project-details {
+        text-align: center;
+      }
+      header h1 {
+        font-size: 36px;
+      }
+      .controls {
+        position: static;
+        text-align: center;
+        margin-bottom: 20px;
+      }
+    }
   </style>
 </head>
 <body>
   <header>
     <div class="controls">
-      <a href="createPage.html">Home</a>
+      <a href="index.html">Home</a>
       <a href="#" id="darkModeToggle">Toggle Dark Mode</a>
     </div>
     <h1>My Projects</h1>
