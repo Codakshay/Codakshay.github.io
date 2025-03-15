@@ -111,6 +111,25 @@
       border: 2px solid #E27A75;
       border-radius: 50%;
     }
+    
+    /* MOBILE FRIENDLINESS */
+    @media (max-width: 768px) {
+      /* Center-align header elements and reposition controls */
+      .home-name, .controls {
+        position: static;
+        text-align: center;
+        margin-bottom: 10px;
+      }
+      header h1 {
+        font-size: 36px;
+      }
+      main {
+        text-align: center;
+      }
+      p {
+        font-size: 16px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -151,3 +170,4 @@
   </script>
 </body>
 </html>
+
