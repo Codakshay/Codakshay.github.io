@@ -259,11 +259,19 @@
   </footer>
   
   <script>
-    // Dark Mode Toggle
+    // On page load, apply dark mode if stored in localStorage.
+    document.addEventListener('DOMContentLoaded', function() {
+      if (localStorage.getItem('darkMode') === 'true') {
+        document.body.classList.add('dark');
+      }
+    });
+    
+    // Dark Mode Toggle: Save preference to localStorage
     const toggleLink = document.getElementById('darkModeToggle');
     toggleLink.addEventListener('click', function(e) {
       e.preventDefault();
       document.body.classList.toggle('dark');
+      localStorage.setItem('darkMode', document.body.classList.contains('dark'));
     });
     
     // Filter projects based on tab selection
@@ -298,3 +306,4 @@
   </script>
 </body>
 </html>
+
