@@ -112,6 +112,9 @@
       border-radius: 50%;
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 0801f80 (wip)
     
     /* MOBILE FRIENDLINESS */
     @media (max-width: 768px) {
@@ -131,6 +134,7 @@
         font-size: 16px;
       }
     }
+<<<<<<< HEAD
   </style>
 </head>
 <body>
@@ -179,43 +183,59 @@
       // Save dark mode preference to localStorage
       localStorage.setItem('darkMode', document.body.classList.contains('dark'));
 =======
+=======
+>>>>>>> 0801f80 (wip)
   </style>
 </head>
 <body>
-  <header>
-    <!-- Home Name on top left -->
-    <div class="home-name">
-      <a href="createPage.html">[Your Name]</a>
-    </div>
-    <div class="controls">
-      <a href="createPage.html">Home</a>
-      <button id="darkModeToggle">Toggle Dark Mode</button>
-    </div>
-    <h1>About Me</h1>
-  </header>
-  <main>
-    <p>
-      Hello! I'm <span class="name-container">[Your Name]
-        <span class="hover-image">
-          <img src="your-photo.jpg" alt="[Your Name]">
-        </span>
-      </span>, a passionate developer and creative problem-solver. I love building web applications, designing user-friendly interfaces, and exploring new technologies.
-    </p>
-    <p>
-      My journey into the world of technology started when I discovered the power of code to bring ideas to life. I've worked on a variety of projects, ranging from personal websites to complex applications that streamline business processes.
-    </p>
-    <p>
-      When I'm not coding, I enjoy exploring design, photography, and travel as ways to spark creativity and learn new perspectives. I believe that continuous learning and curiosity are key to personal and professional growth.
-    </p>
-    <p>
-      If you'd like to know more about my work or get in touch, please feel free to <a href="contact.html">contact me</a> or check out my <a href="projects.html">projects</a>.
-    </p>
-  </main>
+  <div class="container">
+    <header>
+      <!-- Home Name on top left -->
+      <div class="home-name">
+        <a href="createPage.html">Akshay Nataraja</a>
+      </div>
+      <div class="controls">
+        <a href="createPage.html">Home</a>
+        <button id="darkModeToggle">Toggle Dark Mode</button>
+      </div>
+      <h1>About Me</h1>
+    </header>
+    <main>
+      <p>
+        Hello! I'm <span class="name-container">Akshay Nataraja
+          <span class="hover-image">
+            <img src="img/Image.JPG" alt="Akshay Nataraja">
+          </span>
+        </span>, a passionate developer and creative problem-solver. I love building web applications, designing user-friendly interfaces, and exploring new technologies.
+      </p>
+      <p>
+        My journey into the world of technology started when I discovered the power of code to bring ideas to life. I've worked on a variety of projects, ranging from personal websites to complex applications that streamline business processes.
+      </p>
+      <p>
+        When I'm not coding, I enjoy exploring design, photography, and travel as ways to spark creativity and learn new perspectives. I believe that continuous learning and curiosity are key to personal and professional growth.
+      </p>
+      <p>
+        If you'd like to know more about my work or get in touch, please feel free to <a href="contact.html">contact me</a> or check out my <a href="projects.html">projects</a>.
+      </p>
+    </main>
+  </div>
   <script>
+    // On page load, apply dark mode if stored in localStorage.
+    document.addEventListener('DOMContentLoaded', function() {
+      if (localStorage.getItem('darkMode') === 'true') {
+        document.body.classList.add('dark');
+      }
+    });
+    
     const toggleButton = document.getElementById('darkModeToggle');
     toggleButton.addEventListener('click', function() {
       document.body.classList.toggle('dark');
+<<<<<<< HEAD
 >>>>>>> 2b92c20 (new style)
+=======
+      // Save dark mode preference to localStorage
+      localStorage.setItem('darkMode', document.body.classList.contains('dark'));
+>>>>>>> 0801f80 (wip)
     });
   </script>
 </body>
@@ -227,4 +247,8 @@
 
 
 
+<<<<<<< HEAD
 >>>>>>> 2b92c20 (new style)
+=======
+
+>>>>>>> 0801f80 (wip)
