@@ -59,3 +59,190 @@ document.addEventListener("DOMContentLoaded", function () {
 
 });
 
+
+
+// About
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Me</title>
+  <!-- Google Font: Montserrat -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet" />
+  <style>
+    /* Basic styles for light and dark modes */
+    body {
+      margin: 0;
+      font-family: 'Montserrat', sans-serif;
+      background-color: #F0EAD6; /* Eggshell background for light mode */
+      color: #4a4a4a; /* Pastel black text */
+      line-height: 1.6;
+      padding: 20px;
+      transition: background-color 0.3s, color 0.3s;
+    }
+    body.dark {
+      background-color: #333;
+      color: #ddd;
+    }
+    header {
+      position: relative;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    /* Home Name on top left */
+    .home-name {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+    }
+    .home-name a {
+      font-size: 16px;
+      color: #E27A75;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .home-name a:hover {
+      color: #c15b65;
+    }
+    /* Controls (Home & Dark Mode Toggle) at top right */
+    .controls {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+    }
+    .controls a,
+    .controls button {
+      font-size: 16px;
+      color: #E27A75;
+      text-decoration: none;
+      border: none;
+      background: none;
+      cursor: pointer;
+      margin-left: 10px;
+      transition: color 0.2s;
+    }
+    .controls a:hover,
+    .controls button:hover {
+      color: #c15b65;
+    }
+    header h1 {
+      font-size: 48px;
+      color: #E27A75; /* Red primary color */
+      margin: 0 0 20px;
+    }
+    main {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    p {
+      margin-bottom: 1.2em;
+      font-size: 18px;
+    }
+    a {
+      color: #E27A75; /* Red primary for links */
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    a:hover {
+      color: #c15b65;
+    }
+    /* Inline name container with hover image */
+    .name-container {
+      position: relative;
+      display: inline-block;
+      cursor: pointer;
+      font-size: 24px;  /* Larger than the rest of the text */
+      color: #E27A75;   /* Red color */
+    }
+    .name-container .hover-image {
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translate(-50%, 10px);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      pointer-events: none;
+      z-index: 10;
+    }
+    .name-container:hover .hover-image {
+      opacity: 1;
+    }
+    .name-container .hover-image img {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      border: 2px solid #E27A75;
+      border-radius: 50%;
+    }
+    
+    /* MOBILE FRIENDLINESS */
+    @media (max-width: 768px) {
+      /* Center container elements and text */
+      .container, header, nav, .resume, footer, .social {
+        text-align: center;
+      }
+      /* Stack navigation controls */
+      .home-name, .controls {
+        position: static;
+        margin-bottom: 10px;
+      }
+      header h1 {
+        font-size: 36px;
+      }
+      p {
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <!-- Home Name on top left -->
+      <div class="home-name">
+        <a href="index.html">Akshay Nataraja</a>
+      </div>
+      <div class="controls">
+        <a href="index.html">Home</a>
+        <button id="darkModeToggle">Toggle Dark Mode</button>
+      </div>
+      <h1>About Me</h1>
+    </header>
+    <main>
+      <p>
+        Hello! I'm <span class="name-container">Akshay Nataraja
+          <span class="hover-image">
+            <img src="img/Image.JPG" alt="Akshay Nataraja">
+          </span>
+        </span>, a passionate developer and creative problem-solver. I love building web applications, designing user-friendly interfaces, and exploring new technologies.
+      </p>
+      <p>
+        My journey into the world of technology started when I discovered the power of code to bring ideas to life. I've worked on a variety of projects, ranging from personal websites to complex applications that streamline business processes.
+      </p>
+      <p>
+        When I'm not coding, I enjoy exploring design, photography, and travel as ways to spark creativity and learn new perspectives. I believe that continuous learning and curiosity are key to personal and professional growth.
+      </p>
+      <p>
+        If you'd like to know more about my work or get in touch, please feel free to <a href="contact.html">contact me</a> or check out my <a href="projects.html">projects</a>.
+      </p>
+    </main>
+  </div>
+  <script>
+    // On page load, apply dark mode if stored in localStorage.
+    document.addEventListener('DOMContentLoaded', function() {
+      if (localStorage.getItem('darkMode') === 'true') {
+        document.body.classList.add('dark');
+      }
+    });
+    
+    const toggleButton = document.getElementById('darkModeToggle');
+    toggleButton.addEventListener('click', function() {
+      document.body.classList.toggle('dark');
+      // Save dark mode preference to localStorage
+      localStorage.setItem('darkMode', document.body.classList.contains('dark'));
+    });
+  </script>
+</body>
+</html>
