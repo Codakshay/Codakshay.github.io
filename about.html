@@ -1,66 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Portfolio Replica</title>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
-<style>
-:root{
-  --bg:#070707;
-  --panel:#0f0f10;
-  --muted:#9aa0a6;
-  --accent:#2ea86b;
-  --blue:#2a64ff;
-  --line: rgba(255,255,255,0.06);
-  --glass: rgba(255,255,255,0.02);
-  --glass-2: rgba(255,255,255,0.03);
-  --mono: "Courier New", Courier, monospace;
-  --text: #e6e6e6;
-}
-html.light-mode{
-  --bg:#f2f2f2;
-  --panel:#fff;
-  --muted:#555;
-  --accent:#1b7a3b;
-  --text:#000;
-}
-*{box-sizing:border-box;}
-html, body{height:100%; margin:0; padding:48px; font-family:"Montserrat", system-ui; background:var(--bg); color:var(--text); transition:0.3s;}
-.wrap{max-width:980px; margin:0 auto;}
-header{margin-bottom:36px;}
-.intro{display:flex; gap:28px; align-items:flex-start; flex-wrap:wrap;}
-.hello{font-family:"Montserrat", serif; font-size:36px; font-weight:700;}
-.wave{font-size:28px;}
-.bio{max-width:760px; font-family:var(--mono); color:var(--muted); font-size:18px; line-height:1.6;}
-.cta{margin-top:18px; display:flex; gap:18px; align-items:center;}
-.btn-pill{padding:10px 18px; border-radius:999px; border:2px solid rgba(46,168,107,0.3); background:linear-gradient(180deg, rgba(46,168,107,0.03), rgba(46,168,107,0.01)); color:var(--accent); cursor:pointer; font-weight:600; transition:0.15s;}
-.btn-pill:hover{transform:translateY(-2px);}
-hr.section-break{border:0; height:1px; background:linear-gradient(90deg, transparent 0%, var(--line) 10%, var(--line) 90%, transparent 100%); margin:32px 0;}
-.section-title{display:flex; align-items:center; gap:12px; margin:24px 0 14px; color:var(--muted); letter-spacing:4px; font-size:13px;}
-.section-title .accent-line{height:3px; width:36px; background:var(--blue); border-radius:999px;}
-.work-list, .edu-list{display:flex; flex-direction:column; gap:18px;}
-.work-item, .edu-item{background:var(--panel); border-radius:10px; padding:18px; border:1px solid var(--line); display:flex; gap:18px; align-items:flex-start; position:relative; transition:0.3s;}
-.logo{width:64px;height:64px;border-radius:12px;background:linear-gradient(135deg,#0f1720, #0b1012); display:flex; align-items:center; justify-content:center; color:var(--muted); font-weight:700; flex:0 0 64px;}
-.work-meta, .edu-meta{flex:1; display:flex; flex-direction:column; gap:6px;}
-.role{font-weight:700; font-size:20px; color:var(--text);}
-.company{font-family:var(--mono); color:var(--muted); font-size:13px;}
-.chev{position:absolute; right:18px; top:50%; transform:translateY(-50%); cursor:pointer; border:none; background:none;}
-.work-details, .edu-details{margin-top:10px; color:var(--muted); font-family:var(--mono); font-size:14px; line-height:1.6; display:none; padding-top:10px; border-top:1px dashed rgba(255,255,255,0.02);}
-.work-item.open .work-details, .edu-item.open .edu-details{display:block;}
-/* Inline project styling */
-.project-inline{margin-top:10px; padding-left:12px; border-left:2px solid var(--blue)}
-.project-title{font-weight:700; color:var(--text);}
-.project-title a{text-decoration:none; color:var(--text); transition:0.3s;}
-.project-title a:hover, .project-title a:focus, .project-title a:active{color:var(--blue);}
-.project-meta{font-size:12px; color:var(--muted); margin:2px 0 6px;}
-.project-desc{font-size:13px; line-height:1.5; margin-bottom:12px;}
-.skills-list{display:flex; flex-wrap:wrap; gap:10px; margin-bottom:40px;}
-.skills-list .badge{background:var(--glass); border:1px solid rgba(255,255,255,0.02); padding:6px 10px; border-radius:999px; color:var(--text);}
-.floating-nav{position:fixed; left:50%; top:auto; bottom:42px; background:var(--panel); border-radius:999px; padding:12px 20px; display:flex; gap:18px; align-items:center; border:1px solid rgba(255,255,255,0.04); backdrop-filter:blur(6px); z-index:40; cursor:grab; user-select:none; transition:0.3s;}
-.floating-nav.dragging{cursor:grabbing;}
-.nav-btn{width:42px;height:42px;border-radius:8px;display:flex;align-items:center;justify-content:center;cursor:pointer;border:1px solid rgba(255,255,255,0.02); background:transparent;}
-@media (max-width:700px){body{padding:20px;} .intro{flex-direction:column; gap:12px;} .bio{font-size:16px;} .hello{font-size:28px;} .logo{width:56px;height:56px;} .floating-nav{bottom:18px;padding:10px 14px;}}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio Replica</title>
+
+  <!-- Load Roboto Condensed (skinny modern font) -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg: #070707;
+      --panel: #0f0f10;
+      --muted: #9aa0a6;
+      --accent: #2ea86b;
+      --blue: #2a64ff;
+      --line: rgba(255,255,255,0.06);
+      --glass: rgba(255,255,255,0.02);
+      --glass-2: rgba(255,255,255,0.03);
+      --text: #e6e6e6;
+    }
+
+    html.light-mode{
+      --bg:#f2f2f2;
+      --panel:#fff;
+      --muted:#555;
+      --accent:#1b7a3b;
+      --text:#000;
+    }
+
+    *{box-sizing:border-box;}
+    html, body{
+      height:100%;
+      margin:0;
+      padding:48px;
+      font-family:"Poppins", sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      transition:0.3s;
+    }
+
+    .wrap{max-width:980px; margin:0 auto;}
+    header{margin-bottom:36px;}
+    .intro{display:flex; gap:28px; align-items:flex-start; flex-wrap:wrap;}
+    .hello{font-family:"Poppins", sans-serif; font-size:36px; font-weight:700;}
+    .wave{font-size:28px;}
+    .bio{max-width:760px; font-family:var(--mono); color:var(--muted); font-size:18px; line-height:1.6;}
+    .cta{margin-top:18px; display:flex; gap:18px; align-items:center;}
+    .btn-pill{padding:10px 18px; border-radius:999px; border:2px solid rgba(46,168,107,0.3); background:linear-gradient(180deg, rgba(46,168,107,0.03), rgba(46,168,107,0.01)); color:var(--accent); cursor:pointer; font-weight:600; transition:0.15s;}
+    .btn-pill:hover{transform:translateY(-2px);}
+    hr.section-break{border:0; height:1px; background:linear-gradient(90deg, transparent 0%, var(--line) 10%, var(--line) 90%, transparent 100%); margin:32px 0;}
+    .section-title{display:flex; align-items:center; gap:12px; margin:24px 0 14px; color:var(--muted); letter-spacing:4px; font-size:13px;}
+    .section-title .accent-line{height:3px; width:36px; background:var(--blue); border-radius:999px;}
+    .work-list, .edu-list{display:flex; flex-direction:column; gap:18px;}
+    .work-item, .edu-item{background:var(--panel); border-radius:10px; padding:18px; border:1px solid var(--line); display:flex; gap:18px; align-items:flex-start; position:relative; transition:0.3s;}
+    .logo{width:64px;height:64px;border-radius:12px;background:linear-gradient(135deg,#0f1720, #0b1012); display:flex; align-items:center; justify-content:center; color:var(--muted); font-weight:700; flex:0 0 64px;}
+    .work-meta, .edu-meta{flex:1; display:flex; flex-direction:column; gap:6px;}
+    .role{font-weight:700; font-size:20px; color:var(--text); font-family:"Poppins", sans-serif;}
+    .company{font-family:var(--mono); color:var(--muted); font-size:13px;}
+    .chev{position:absolute; right:18px; top:50%; transform:translateY(-50%); cursor:pointer; border:none; background:none;}
+    .work-details, .edu-details{margin-top:10px; color:var(--muted); font-family:var(--mono); font-size:14px; line-height:1.6; display:none; padding-top:10px; border-top:1px dashed rgba(255,255,255,0.02);}
+    .work-item.open .work-details, .edu-item.open .edu-details{display:block;}
+    .project-inline{margin-top:10px; padding-left:12px; border-left:2px solid var(--blue)}
+    .project-title{font-weight:700; color:var(--text); font-family:"Poppins", sans-serif;}
+    .project-title a{text-decoration:none; color:var(--text); transition:0.3s;}
+    .project-title a:hover, .project-title a:focus, .project-title a:active{color:var(--blue);}
+    .project-meta{font-size:12px; color:var(--muted); margin:2px 0 6px; font-family:var(--mono);}
+    .project-desc{font-size:13px; line-height:1.5; margin-bottom:12px; font-family:var(--mono);}
+    .skills-list{display:flex; flex-wrap:wrap; gap:10px; margin-bottom:40px;}
+    .skills-list .badge{background:var(--glass); border:1px solid rgba(255,255,255,0.02); padding:6px 10px; border-radius:999px; color:var(--text); font-family:"Poppins", sans-serif;}
+    .floating-nav{position:fixed; left:50%; top:auto; bottom:42px; background:var(--panel); border-radius:999px; padding:12px 20px; display:flex; gap:12px; align-items:center; border:1px solid rgba(255,255,255,0.04); backdrop-filter:blur(6px); z-index:40; cursor:grab; user-select:none; transition:0.3s;}
+    .floating-nav.dragging{cursor:grabbing;}
+    .nav-btn{width:42px;height:42px;border-radius:8px;display:flex;align-items:center;justify-content:center;cursor:pointer;border:1px solid rgba(255,255,255,0.02); background:transparent; font-size:18px;}
+    .floating-nav a{color:var(--text); text-decoration:none; display:flex; align-items:center; justify-content:center;}
+    .floating-nav a svg{width:20px; height:20px; fill:var(--text); transition:0.3s;}
+    .floating-nav a:hover svg{fill:var(--blue);}
+    @media (max-width:700px){
+      body{padding:20px;}
+      .intro{flex-direction:column; gap:12px;}
+      .bio{font-size:16px;}
+      .hello{font-size:28px;}
+      .logo{width:56px;height:56px;}
+      .floating-nav{bottom:18px;padding:10px 14px;}
+    }
+
 </style>
 </head>
 <body>
@@ -68,10 +91,10 @@ hr.section-break{border:0; height:1px; background:linear-gradient(90deg, transpa
 <header>
 <div class="intro">
 <div>
-<div class="hello">hey, i'm aditya <span class="wave">👋</span></div>
+<div class="hello">hey, i'm akshay <span class="wave">👋</span></div>
 </div>
 <div>
-<div class="bio">I've been making computers do cool stuff ever since I saw Siri talk. Turns out, asking "how does this work?" long enough leads to building your own.</div>
+<div class="bio">I love turning data into insights and building full-stack systems that solve real-world problems, from AI pipelines to web applications.</div>
 <div class="cta">
 <button class="btn-pill" id="openWork">open for work!</button>
 <div style="color:var(--muted); font-family:var(--mono); font-size:13px;">available — remote / contract</div>
@@ -81,27 +104,35 @@ hr.section-break{border:0; height:1px; background:linear-gradient(90deg, transpa
 </header>
 
 <div class="edu-list">
+<div class="section-title"><div class="accent-line"></div>EDUCATION</div>
 <article class="edu-item">
   <div class="logo">PSU</div>
   <div class="edu-meta">
-    <div class="role">B.Sc. Computer Science, Minor in Mathematics • GPA: 3.22/4.0</div>
-    <div class="company">The Pennsylvania State University • Aug 2021 - May 2025</div>
+    <div class="role">B.Sc. Computer Science, Minor in Mathematics</div>
+    <div class="company">The Pennsylvania State University • University Park, PA • GPA: 3.22/4.0</div>
     <div class="edu-details">
-      <strong>Projects / Coursework:</strong>
+      <strong>Relevant Coursework:</strong> Software Engineering, Artificial Intelligence, Machine Learning, Object Oriented Programming
+      <br><br>
+      <strong>Projects:</strong>
       <div class="project-inline">
-        <div class="project-title"><a href="#">Software Engineering Project</a></div>
-        <div class="project-meta">Fall 2024 • Team of 4</div>
-        <div class="project-desc">Built a full-stack course planner using Java, React, and MySQL, simulating real-world software engineering workflow.</div>
+        <div class="project-title"><a href="#">Data Science Undergraduate Research Project</a></div>
+        <div class="project-meta">R, Shell, Python, HPC</div>
+        <div class="project-desc">Built an RNA-Seq pipeline to analyze gene expression profiles, utilized HPC cluster for large datasets, and applied PCA/k-means clustering for population analysis.</div>
       </div>
       <div class="project-inline">
-        <div class="project-title"><a href="#">AI & ML Capstone</a></div>
-        <div class="project-meta">Spring 2025 • Team of 3</div>
-        <div class="project-desc">Designed and trained machine learning models for a recommendation engine as part of a research-driven capstone project.</div>
+        <div class="project-title"><a href="#">Northrop Grumman Object Detection Challenge</a></div>
+        <div class="project-meta">Python, Roboflow, JavaScript</div>
+        <div class="project-desc">Won 3rd place in a hack week by creating an object detection program using an SAM-2 model with Python and Roboflow.</div>
       </div>
       <div class="project-inline">
-        <div class="project-title"><a href="#">Object-Oriented Programming Mini-Projects</a></div>
-        <div class="project-meta">Spring 2023 • Individual</div>
-        <div class="project-desc">Developed multiple Java applications applying OOP principles like inheritance, polymorphism, and encapsulation.</div>
+        <div class="project-title"><a href="#">Smart Start</a></div>
+        <div class="project-meta">Python, ACT-R, scikit-learn</div>
+        <div class="project-desc">Developed an AI-powered educational app to enhance kindergarten readiness, with adaptive gameplay using Python and ACT-R cognitive architecture.</div>
+      </div>
+      <div class="project-inline">
+        <div class="project-title"><a href="#">Automated Cat Feeder</a></div>
+        <div class="project-meta">Python, SQL, TypeScript</div>
+        <div class="project-desc">Created a Wi-Fi smart cat feeder system using Raspberry Pi 5 and built a full-stack web app with SQL integration for meal management.</div>
       </div>
     </div>
   </div>
@@ -109,14 +140,15 @@ hr.section-break{border:0; height:1px; background:linear-gradient(90deg, transpa
 </article>
 </div>
 
-
 <hr class="section-break"/>
 <div class="section-title"><div class="accent-line"></div>WORK</div>
 <div class="work-list">
+
+<!-- Original work items -->
 <article class="work-item">
 <div class="logo">A</div>
 <div class="work-meta">
-<div class="role">AI Engineer</div>
+<div class="role">ai engineer</div>
 <div class="company">DwarfSky • Jan 2025 - May 2025</div>
 <div class="work-details">
 Built ML pipelines and monitoring for model drift.<br><br>
@@ -139,7 +171,7 @@ Built ML pipelines and monitoring for model drift.<br><br>
 <article class="work-item">
 <div class="logo">B</div>
 <div class="work-meta">
-<div class="role">Undergrad Researcher</div>
+<div class="role">undergrad researcher</div>
 <div class="company">SUTD • May 2024 - Apr 2025</div>
 <div class="work-details">
 Worked on computational design and accessibility plugins.<br><br>
@@ -158,7 +190,87 @@ Worked on computational design and accessibility plugins.<br><br>
 </div>
 <button class="chev">⌄</button>
 </article>
+
+<!-- Added resume work experiences -->
+<article class="work-item">
+<div class="logo">W</div>
+<div class="work-meta">
+<div class="role">Data Science & Data Engineering Intern</div>
+<div class="company">Western Union • Summer 2025 • Denver, CO</div>
+<div class="work-details">
+Built DeepAR time series models in Dataiku to forecast $75M in weekend capital allocations, enabling data-driven distributions and optimizing capital float utilization.<br>
+Improved forecast accuracy with a mean absolute percentage error (MAPE) of 7% over baseline models.<br>
+Automated analysis and validation pipelines, saving the data science team 10+ hours per week.<br><br>
+<strong>Projects:</strong>
+<div class="project-inline">
+<div class="project-title"><a href="#">DeepAR Forecasting Pipeline</a></div>
+<div class="project-meta">Summer 2025</div>
+<div class="project-desc">Built and automated time series forecasting pipelines to optimize capital allocation and enhance operational efficiency.</div>
 </div>
+</div>
+</div>
+<button class="chev">⌄</button>
+</article>
+
+<article class="work-item">
+<div class="logo">C</div>
+<div class="work-meta">
+<div class="role">Software Engineering Intern</div>
+<div class="company">Circle Plus • Spring 2025 – Present • San Francisco, CA</div>
+<div class="work-details">
+Implemented API connections with services like Zoho, Asana, and Xero to automate workflows and gather data.<br>
+Optimized lean canvas generation for startups by integrating AWS Bedrock, and enabling scalable business plan development for 100+ startup users.<br><br>
+<strong>Projects:</strong>
+<div class="project-inline">
+<div class="project-title"><a href="#">Startup Automation Platform</a></div>
+<div class="project-meta">Spring 2025</div>
+<div class="project-desc">Built integrations and automation tools to streamline lean canvas creation for multiple startup users.</div>
+</div>
+</div>
+</div>
+<button class="chev">⌄</button>
+</article>
+
+<article class="work-item">
+<div class="logo">CB</div>
+<div class="work-meta">
+<div class="role">Data Analyst Intern</div>
+<div class="company">Customers Bank • Summer 2024 • Malvern, PA</div>
+<div class="work-details">
+Applied PCA for dimensionality reduction and performed clustering on risk rating data using Python, pandas, and scikit-learn to group correlated auditable entities and support automated audit scheduling.<br>
+Built audit dashboards with matplotlib and developed automated Python and shell scripts, streamlining workflows for data reconciliation and SOX file processing.<br><br>
+<strong>Projects:</strong>
+<div class="project-inline">
+<div class="project-title"><a href="#">Risk Analysis & Audit Dashboards</a></div>
+<div class="project-meta">Summer 2024</div>
+<div class="project-desc">Developed dashboards and clustering pipelines to automate risk rating analysis and audit scheduling.</div>
+</div>
+</div>
+</div>
+<button class="chev">⌄</button>
+</article>
+
+<article class="work-item">
+<div class="logo">AP</div>
+<div class="work-meta">
+<div class="role">Web Development Intern</div>
+<div class="company">Attollo Prep • Fall 2023 – Spring 2024 • University Park, PA</div>
+<div class="work-details">
+Collaborated with a team of 4 developers to develop a dynamic web application using Django framework to collect and manage student information and create a secure web login system for user authentication.<br>
+Implemented a data form that collects user specifics to recommend a list of potential colleges that fit the criteria.<br><br>
+<strong>Projects:</strong>
+<div class="project-inline">
+<div class="project-title"><a href="#">Student Management Web App</a></div>
+<div class="project-meta">Fall 2023 – Spring 2024</div>
+<div class="project-desc">Full-stack Django application for managing student info, authentication, and college recommendations.</div>
+</div>
+</div>
+</div>
+<button class="chev">⌄</button>
+</article>
+
+</div>
+
 
 <hr class="section-break"/>
 <div class="section-title"><div class="accent-line"></div>SKILLS</div>
@@ -172,21 +284,49 @@ Worked on computational design and accessibility plugins.<br><br>
 <div class="badge">React</div>
 <div class="badge">Node.js</div>
 <div class="badge">Git</div>
+<div class="badge">R</div>
+<div class="badge">TypeScript</div>
+<div class="badge">Docker</div>
+<div class="badge">scikit-learn</div>
+<div class="badge">Jupyter</div>
 </div>
 
-</div>
-<div style="height:100px;"></div>
 
 <div class="floating-nav" id="floatingNav">
-<div class="nav-btn" id="toggleMode" title="toggle dark/light mode">🌓</div>
+  <a href="https://github.com/codakshay" target="_blank" title="GitHub">
+    <svg viewBox="0 0 24 24"><path d="M12 .5C5.73.5.5 5.73.5 12c0 5.09 3.29 9.41 7.86 10.94.58.11.79-.25.79-.56v-2c-3.2.7-3.88-1.54-3.88-1.54-.53-1.34-1.3-1.7-1.3-1.7-1.06-.72.08-.71.08-.71 1.17.08 1.78 1.2 1.78 1.2 1.04 1.78 2.73 1.27 3.4.97.11-.76.41-1.27.74-1.56-2.55-.29-5.23-1.28-5.23-5.7 0-1.26.45-2.3 1.2-3.12-.12-.29-.52-1.46.11-3.04 0 0 .98-.31 3.2 1.19a11.1 11.1 0 012.92-.39c.99 0 2 .13 2.92.39 2.22-1.5 3.2-1.19 3.2-1.19.63 1.58.23 2.75.11 3.04.75.82 1.2 1.86 1.2 3.12 0 4.43-2.69 5.41-5.25 5.69.42.36.8 1.08.8 2.18v3.23c0 .31.21.68.8.56A10.5 10.5 0 0023.5 12C23.5 5.73 18.27.5 12 .5z"/></svg>
+  </a>
+  <a href="https://www.linkedin.com/in/akshay-nataraja" target="_blank" title="LinkedIn">
+  <svg viewBox="0 0 448 512">
+    <path d="M100.28 448H7.4V148.9h92.88zm-46.44-338a53.62 53.62 0 1 1 53.62-53.61 53.61 53.61 0 0 1-53.62 53.61zM447.9 448h-92.68V302.4c0-34.7-.7-79.36-48.36-79.36-48.36 0-55.76 37.78-55.76 76.86V448H158.7V148.9h89.08v40.8h1.3c12.42-23.57 42.72-48.36 87.88-48.36 94 0 111.36 61.86 111.36 142.3V448z"/>
+  </svg>
+</a>
+  <a href="Akshay_Nataraja_Resume.pdf" download title="Download Resume">
+    <svg viewBox="0 0 24 24"><path d="M5 20h14v-2H5v2zm7-18l-5 5h3v4h4v-4h3l-5-5z"/></svg>
+  </a>
+  <div class="separator"></div>
+  <div class="nav-btn" id="toggleMode" title="toggle dark/light mode">🌓</div>
 </div>
+
+<style>
+.floating-nav a svg{width:24px; height:24px; fill:var(--text); transition:0.3s;}
+.floating-nav a:hover svg{fill:var(--blue);}
+.floating-nav .separator{
+  width:1px;
+  height:32px;
+  background:var(--muted);
+  margin:0 12px;
+}
+.floating-nav{gap:12px; padding:12px 24px;}
+</style>
+
 
 <script>
 // Toggle work & education items on click anywhere except links/buttons
 document.querySelectorAll('.work-item, .edu-item').forEach(item => {
   item.addEventListener('click', e => {
     const tag = e.target.tagName.toLowerCase();
-    if (tag === 'a' || tag === 'button') return; // skip links and buttons
+    if (tag === 'a' || tag === 'button') return;
     item.classList.toggle('open');
   });
 });
@@ -234,12 +374,3 @@ document.addEventListener('mouseup', () => {
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
