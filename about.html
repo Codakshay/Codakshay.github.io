@@ -9,25 +9,41 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap" rel="stylesheet">
 
   <style>
-    :root{
-      --bg: #070707;
-      --panel: #0f0f10;
-      --muted: #9aa0a6;
-      --accent: #2ea86b;
-      --blue: #2a64ff;
-      --line: rgba(255,255,255,0.06);
-      --glass: rgba(255,255,255,0.02);
-      --glass-2: rgba(255,255,255,0.03);
-      --text: #e6e6e6;
-    }
+    :root {
+  --bg: #070707;
+  --panel: #0f0f10;
+  --muted: #9aa0a6;
+  --accent: #2ea86b;
+  --blue: #2a64ff;
+  --line: rgba(255,255,255,0.06);
+  --glass: rgba(255,255,255,0.02);
+  --glass-2: rgba(255,255,255,0.03);
+  --text: #e6e6e6;
+  --logo-bg: linear-gradient(135deg,#0f1720, #0b1012); /* dark mode default */
+}
 
-    html.light-mode{
-      --bg:#f2f2f2;
-      --panel:#fff;
-      --muted:#555;
-      --accent:#1b7a3b;
-      --text:#000;
-    }
+html.light-mode {
+  --bg:#f2f2f2;
+  --panel:#fff;
+  --muted:#555;
+  --accent:#1b7a3b;
+  --text:#000;
+  --logo-bg: linear-gradient(135deg,#f9f9f9,#e6e6e6); /* light mode logo bg */
+}
+
+.logo {
+  width:64px;
+  height:64px;
+  border-radius:12px;
+  background:var(--logo-bg);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:var(--muted);
+  font-weight:700;
+  flex:0 0 64px;
+}
+
 
     *{box-sizing:border-box;}
     html, body{
@@ -54,7 +70,20 @@
     .section-title .accent-line{height:3px; width:36px; background:var(--blue); border-radius:999px;}
     .work-list, .edu-list{display:flex; flex-direction:column; gap:18px;}
     .work-item, .edu-item{background:var(--panel); border-radius:10px; padding:18px; border:1px solid var(--line); display:flex; gap:18px; align-items:flex-start; position:relative; transition:0.3s;}
-    .logo{width:64px;height:64px;border-radius:12px;background:linear-gradient(135deg,#0f1720, #0b1012); display:flex; align-items:center; justify-content:center; color:var(--muted); font-weight:700; flex:0 0 64px;}
+
+.logo {
+  width:64px;
+  height:64px;
+  border-radius:12px;
+  background:var(--logo-bg);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:var(--muted);
+  font-weight:700;
+  flex:0 0 64px;
+}
+
     .work-meta, .edu-meta{flex:1; display:flex; flex-direction:column; gap:6px;}
     .role{font-weight:700; font-size:20px; color:var(--text); font-family:"Poppins", sans-serif;}
     .company{font-family:var(--mono); color:var(--muted); font-size:13px;}
@@ -106,10 +135,12 @@
 <div class="edu-list">
 <div class="section-title"><div class="accent-line"></div>EDUCATION</div>
 <article class="edu-item">
-  <div class="logo">PSU</div>
+  <div class="logo">
+      <img src="img/Penn-State-Logo-PNG.png" alt="PSU Logo" style="width:40px; height:auto;" />
+    </div>
   <div class="edu-meta">
     <div class="role">B.Sc. Computer Science, Minor in Mathematics</div>
-    <div class="company">The Pennsylvania State University • University Park, PA • GPA: 3.22/4.0</div>
+    <div class="company">The Pennsylvania State University • University Park, PA</div>
     <div class="edu-details">
       <strong>Relevant Coursework:</strong> Software Engineering, Artificial Intelligence, Machine Learning, Object Oriented Programming
       <br><br>
@@ -144,56 +175,11 @@
 <div class="section-title"><div class="accent-line"></div>WORK</div>
 <div class="work-list">
 
-<!-- Original work items -->
-<article class="work-item">
-<div class="logo">A</div>
-<div class="work-meta">
-<div class="role">ai engineer</div>
-<div class="company">DwarfSky • Jan 2025 - May 2025</div>
-<div class="work-details">
-Built ML pipelines and monitoring for model drift.<br><br>
-<strong>Projects:</strong>
-<div class="project-inline">
-<div class="project-title"><a href="#">AccessAble</a></div>
-<div class="project-meta">Spring 2025 • With DP Architects</div>
-<div class="project-desc">AI-driven plugin for accessibility compliance evaluation, helping architects validate building designs for inclusivity.</div>
-</div>
-<div class="project-inline">
-<div class="project-title"><a href="#">Spatial Design Platform</a></div>
-<div class="project-meta">Spring 2025 • With URA</div>
-<div class="project-desc">Transforms sensor & urban data into actionable design insights, enabling data-informed city planning decisions.</div>
-</div>
-</div>
-</div>
-<button class="chev">⌄</button>
-</article>
-
-<article class="work-item">
-<div class="logo">B</div>
-<div class="work-meta">
-<div class="role">undergrad researcher</div>
-<div class="company">SUTD • May 2024 - Apr 2025</div>
-<div class="work-details">
-Worked on computational design and accessibility plugins.<br><br>
-<strong>Projects:</strong>
-<div class="project-inline">
-<div class="project-title"><a href="#">AccessAble</a></div>
-<div class="project-meta">Summer 2024 • With DP Architects</div>
-<div class="project-desc">Collaborated on the development of AI-powered accessibility evaluation tools, ensuring usability in architectural workflows.</div>
-</div>
-<div class="project-inline">
-<div class="project-title"><a href="#">Spatial Design Platform</a></div>
-<div class="project-meta">Fall 2024 • With URA</div>
-<div class="project-desc">Explored new computational design methods to integrate urban sensor data, providing innovative visualization for planners.</div>
-</div>
-</div>
-</div>
-<button class="chev">⌄</button>
-</article>
-
 <!-- Added resume work experiences -->
 <article class="work-item">
-<div class="logo">W</div>
+<div class="logo">
+      <img src="img/WUIMG2.png" alt="WU Logo" style="width:40px; height:auto;" />
+    </div>
 <div class="work-meta">
 <div class="role">Data Science & Data Engineering Intern</div>
 <div class="company">Western Union • Summer 2025 • Denver, CO</div>
@@ -207,13 +193,20 @@ Automated analysis and validation pipelines, saving the data science team 10+ ho
 <div class="project-meta">Summer 2025</div>
 <div class="project-desc">Built and automated time series forecasting pipelines to optimize capital allocation and enhance operational efficiency.</div>
 </div>
+<div class="project-inline">
+<div class="project-title"><a href="#">Spatial Design Platform</a></div>
+<div class="project-meta">Fall 2024 • With URA</div>
+<div class="project-desc">Explored new computational design methods to integrate urban sensor data, providing innovative visualization for planners.</div>
+</div>
 </div>
 </div>
 <button class="chev">⌄</button>
 </article>
 
 <article class="work-item">
-<div class="logo">C</div>
+<div class="logo">
+      <img src="img/Screenshot 2025-09-24 at 6.16.07 PM.png" alt="C+ Logo" style="width:40px; height:auto;" />
+    </div>
 <div class="work-meta">
 <div class="role">Software Engineering Intern</div>
 <div class="company">Circle Plus • Spring 2025 – Present • San Francisco, CA</div>
@@ -232,7 +225,9 @@ Optimized lean canvas generation for startups by integrating AWS Bedrock, and en
 </article>
 
 <article class="work-item">
-<div class="logo">CB</div>
+<div class="logo">
+      <img src="img/CUBI.jpg" alt="CB Logo" style="width:40px; height:auto;" />
+    </div>
 <div class="work-meta">
 <div class="role">Data Analyst Intern</div>
 <div class="company">Customers Bank • Summer 2024 • Malvern, PA</div>
@@ -251,10 +246,33 @@ Built audit dashboards with matplotlib and developed automated Python and shell 
 </article>
 
 <article class="work-item">
-<div class="logo">AP</div>
+<div class="logo">
+      <img src="img/Screenshot 2025-09-24 at 6.21.03 PM.png" alt="AP Logo" style="width:40px; height:auto;" />
+    </div>
 <div class="work-meta">
 <div class="role">Web Development Intern</div>
 <div class="company">Attollo Prep • Fall 2023 – Spring 2024 • University Park, PA</div>
+<div class="work-details">
+Collaborated with a team of 4 developers to develop a dynamic web application using Django framework to collect and manage student information and create a secure web login system for user authentication.<br>
+Implemented a data form that collects user specifics to recommend a list of potential colleges that fit the criteria.<br><br>
+<strong>Projects:</strong>
+<div class="project-inline">
+<div class="project-title"><a href="#">Student Management Web App</a></div>
+<div class="project-meta">Fall 2023 – Spring 2024</div>
+<div class="project-desc">Full-stack Django application for managing student info, authentication, and college recommendations.</div>
+</div>
+</div>
+</div>
+<button class="chev">⌄</button>
+</article>
+
+<article class="work-item">
+<div class="logo">
+      <img src="img/PSUIcon.png" alt="AP Logo" style="width:40px; height:auto;" />
+    </div>
+<div class="work-meta">
+<div class="role">Undergraduate Library Assistant</div>
+<div class="company">Pattee & Paterno Library • Fall 2021 – Spring 2022 • University Park, PA</div>
 <div class="work-details">
 Collaborated with a team of 4 developers to develop a dynamic web application using Django framework to collect and manage student information and create a secure web login system for user authentication.<br>
 Implemented a data form that collects user specifics to recommend a list of potential colleges that fit the criteria.<br><br>
