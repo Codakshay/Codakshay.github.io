@@ -3,7 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio Replica</title>
+  <title>Akshay's Portfolio</title>
+
+  <!-- Favicon for browsers -->
+  <link rel="icon" type="image/png" sizes="32x32" href="img/WUimg.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="img/WUimg.png">
+
+  <!-- Safari / iOS Home Screen Icon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="img/dudeshay.JPG">
+
+
+  
 
   <!-- Load Roboto Condensed (skinny modern font) -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap" rel="stylesheet">
@@ -60,7 +70,6 @@ html.light-mode {
     header{margin-bottom:36px;}
     .intro{display:flex; gap:28px; align-items:flex-start; flex-wrap:wrap;}
     .hello{font-family:"Poppins", sans-serif; font-size:36px; font-weight:700;}
-    .wave{font-size:28px;}
     .bio{max-width:760px; font-family:var(--mono); color:var(--muted); font-size:18px; line-height:1.6;}
     .cta{margin-top:18px; display:flex; gap:18px; align-items:center;}
     .btn-pill{padding:10px 18px; border-radius:999px; border:2px solid rgba(46,168,107,0.3); background:linear-gradient(180deg, rgba(46,168,107,0.03), rgba(46,168,107,0.01)); color:var(--accent); cursor:pointer; font-weight:600; transition:0.15s;}
@@ -87,7 +96,7 @@ html.light-mode {
     .work-meta, .edu-meta{flex:1; display:flex; flex-direction:column; gap:6px;}
     .role{font-weight:700; font-size:20px; color:var(--text); font-family:"Poppins", sans-serif;}
     .company{font-family:var(--mono); color:var(--muted); font-size:13px;}
-    .chev{position:absolute; right:18px; top:50%; transform:translateY(-50%); cursor:pointer; border:none; background:none;}
+    .chev{font-size:20px;position:absolute; right:18px; top:50%; transform:translateY(-50%); cursor:pointer; border:none; background:none;}
     .work-details, .edu-details{margin-top:10px; color:var(--muted); font-family:var(--mono); font-size:14px; line-height:1.6; display:none; padding-top:10px; border-top:1px dashed rgba(255,255,255,0.02);}
     .work-item.open .work-details, .edu-item.open .edu-details{display:block;}
     .project-inline{margin-top:10px; padding-left:12px; border-left:2px solid var(--blue)}
@@ -120,7 +129,7 @@ html.light-mode {
 <header>
 <div class="intro">
 <div>
-<div class="hello">hey, i'm akshay <span class="wave">👋</span></div>
+<div class="hello">hey, i'm akshay</div>
 </div>
 <div>
 <div class="bio">I love turning data into insights and building full-stack systems that solve real-world problems, from AI pipelines to web applications.</div>
@@ -133,43 +142,99 @@ html.light-mode {
 </header>
 
 <div class="edu-list">
-<div class="section-title"><div class="accent-line"></div>EDUCATION</div>
-<article class="edu-item">
-  <div class="logo">
+  <div class="section-title">
+    <div class="accent-line"></div>EDUCATION
+  </div>
+
+  <article class="edu-item">
+    <div class="logo">
       <img src="img/Penn-State-Logo-PNG.png" alt="PSU Logo" style="width:40px; height:auto;" />
     </div>
-  <div class="edu-meta">
-    <div class="role">B.Sc. Computer Science, Minor in Mathematics</div>
-    <div class="company">The Pennsylvania State University • University Park, PA</div>
-    <div class="edu-details">
-      <strong>Relevant Coursework:</strong> Software Engineering, Artificial Intelligence, Machine Learning, Object Oriented Programming
-      <br><br>
-      <strong>Projects:</strong>
-      <div class="project-inline">
-        <div class="project-title"><a href="#">Data Science Undergraduate Research Project</a></div>
-        <div class="project-meta">R, Shell, Python, HPC</div>
-        <div class="project-desc">Built an RNA-Seq pipeline to analyze gene expression profiles, utilized HPC cluster for large datasets, and applied PCA/k-means clustering for population analysis.</div>
-      </div>
-      <div class="project-inline">
-        <div class="project-title"><a href="#">Northrop Grumman Object Detection Challenge</a></div>
-        <div class="project-meta">Python, Roboflow, JavaScript</div>
-        <div class="project-desc">Won 3rd place in a hack week by creating an object detection program using an SAM-2 model with Python and Roboflow.</div>
-      </div>
-      <div class="project-inline">
-        <div class="project-title"><a href="#">Smart Start</a></div>
-        <div class="project-meta">Python, ACT-R, scikit-learn</div>
-        <div class="project-desc">Developed an AI-powered educational app to enhance kindergarten readiness, with adaptive gameplay using Python and ACT-R cognitive architecture.</div>
-      </div>
-      <div class="project-inline">
-        <div class="project-title"><a href="#">Automated Cat Feeder</a></div>
-        <div class="project-meta">Python, SQL, TypeScript</div>
-        <div class="project-desc">Created a Wi-Fi smart cat feeder system using Raspberry Pi 5 and built a full-stack web app with SQL integration for meal management.</div>
+
+    <div class="edu-meta">
+      <div class="role">Computer Science, Minor in Mathematics</div>
+      <div class="company">The Pennsylvania State University • University Park, PA</div>
+      
+      <div class="edu-details">
+        <strong>Relevant Coursework:</strong> Software Engineering, Artificial Intelligence, 
+        Machine Learning, Object Oriented Programming
+        <br><br>
+
+        <strong>Projects:</strong>
+        
+        <div class="project-inline">
+          <div class="project-title"><a href="https://github.com/Codakshay/RNA_Seq_Final_Project">RNA Sequence DGE Pipeline</a></div>
+          <div class="project-extra">
+            <span class="course">CMPSC 497.2: Genomic Data Science</span> • 
+            <span class="semester">Fall 2025</span>
+          </div>
+          <div class="project-meta">R, Shell, Python, HPC</div>
+          <div class="project-desc">
+            Built an RNA-Seq pipeline to analyze gene expression profiles, utilized HPC cluster for large datasets, 
+            and applied PCA/k-means clustering for population analysis.
+          </div>
+        </div>
+
+        <div class="project-inline">
+          <div class="project-title"><a href="#">SAM-2 Model Image Processor</a></div>
+          <div class="project-extra">
+            <span class="course">Northrop Grumman Object Detection Challenge</span> • 
+            <span class="semester">Spring 2024</span>
+          </div>
+          <div class="project-meta">Python, Roboflow, JavaScript</div>
+          <div class="project-desc">
+            Won 3rd place in a hack week by creating an object detection program using an SAM-2 model 
+            with Python and Roboflow.
+          </div>
+        </div>
+
+        <div class="project-inline">
+          <div class="project-title"><a href="#">Smart Start</a></div>
+          <div class="project-extra">
+            <span class="course">CMPSC 497: Cognitive Artificial Intelligence</span> • 
+            <span class="semester">Fall 2022</span>
+          </div>
+          <div class="project-meta">Python, ACT-R, scikit-learn</div>
+          <div class="project-desc">
+            Developed an AI-powered educational app to enhance kindergarten readiness, 
+            with adaptive gameplay using Python and ACT-R cognitive architecture.
+          </div>
+        </div>
+
+        <div class="project-inline">
+          <div class="project-title"><a href="#">Automated Cat Feeder</a></div>
+          <div class="project-extra">
+            <span class="course">CMPSC 483W: Senior Capstone</span> • 
+            <span class="semester">Spring 2025</span>
+          </div>
+          <div class="project-meta">Python, PostgresSQL, TypeScript</div>
+          <div class="project-desc">
+            Created a Wi-Fi smart cat feeder system using Raspberry Pi 5 and built a full-stack 
+            web app with SQL integration for meal management.
+          </div>
+        </div>
+
+        <div class="project-inline">
+          <div class="project-title"><a href="https://github.com/Codakshay/KCZA_CMPSC431W_Capstone">NittanyGo</a></div>
+          <div class="project-extra">
+            <span class="course">CMPSC 431W: Database Management</span> • 
+            <span class="semester">Spring 2025</span>
+          </div>
+          <div class="project-meta">Python, SQLite, TypeScript, Flask</div>
+          <div class="project-desc">
+            Developed an online marketplace prototype connecting SMEs with trusted suppliers,
+            featuring user management, product listings, category browsing, order tracking, reviews, and search functionality.
+          </div>
+        </div>
+
+
       </div>
     </div>
-  </div>
-  <button class="chev">⌄</button>
-</article>
+
+    <button class="chev">⌄</button>
+  </article>
 </div>
+
 
 <hr class="section-break"/>
 <div class="section-title"><div class="accent-line"></div>WORK</div>
@@ -189,14 +254,9 @@ Improved forecast accuracy with a mean absolute percentage error (MAPE) of 7% ov
 Automated analysis and validation pipelines, saving the data science team 10+ hours per week.<br><br>
 <strong>Projects:</strong>
 <div class="project-inline">
-<div class="project-title"><a href="#">DeepAR Forecasting Pipeline</a></div>
+<div class="project-title"><a href="https://s21.q4cdn.com/100551446/files/doc_financials/2025/q2/2Q25-Presentation-Final.pdf">DeepAR Forecasting Pipeline</a></div>
 <div class="project-meta">Summer 2025</div>
 <div class="project-desc">Built and automated time series forecasting pipelines to optimize capital allocation and enhance operational efficiency.</div>
-</div>
-<div class="project-inline">
-<div class="project-title"><a href="#">Spatial Design Platform</a></div>
-<div class="project-meta">Fall 2024 • With URA</div>
-<div class="project-desc">Explored new computational design methods to integrate urban sensor data, providing innovative visualization for planners.</div>
 </div>
 </div>
 </div>
@@ -208,14 +268,14 @@ Automated analysis and validation pipelines, saving the data science team 10+ ho
       <img src="img/Screenshot 2025-09-24 at 6.16.07 PM.png" alt="C+ Logo" style="width:40px; height:auto;" />
     </div>
 <div class="work-meta">
-<div class="role">Software Engineering Intern</div>
+<div class="role">Software Engineering Co-Op</div>
 <div class="company">Circle Plus • Spring 2025 – Present • San Francisco, CA</div>
 <div class="work-details">
 Implemented API connections with services like Zoho, Asana, and Xero to automate workflows and gather data.<br>
 Optimized lean canvas generation for startups by integrating AWS Bedrock, and enabling scalable business plan development for 100+ startup users.<br><br>
 <strong>Projects:</strong>
 <div class="project-inline">
-<div class="project-title"><a href="#">Startup Automation Platform</a></div>
+<div class="project-title"><a href="https://www.circleplus.io">Startup Automation Platform</a></div>
 <div class="project-meta">Spring 2025</div>
 <div class="project-desc">Built integrations and automation tools to streamline lean canvas creation for multiple startup users.</div>
 </div>
@@ -257,7 +317,7 @@ Collaborated with a team of 4 developers to develop a dynamic web application us
 Implemented a data form that collects user specifics to recommend a list of potential colleges that fit the criteria.<br><br>
 <strong>Projects:</strong>
 <div class="project-inline">
-<div class="project-title"><a href="#">Student Management Web App</a></div>
+<div class="project-title"><a href="https://www.attolloprep.org">Student Management Web App</a></div>
 <div class="project-meta">Fall 2023 – Spring 2024</div>
 <div class="project-desc">Full-stack Django application for managing student info, authentication, and college recommendations.</div>
 </div>
@@ -273,14 +333,7 @@ Implemented a data form that collects user specifics to recommend a list of pote
 <div class="work-meta">
 <div class="role">Undergraduate Library Assistant</div>
 <div class="company">Pattee & Paterno Library • Fall 2021 – Spring 2022 • University Park, PA</div>
-<div class="work-details">
-Collaborated with a team of 4 developers to develop a dynamic web application using Django framework to collect and manage student information and create a secure web login system for user authentication.<br>
-Implemented a data form that collects user specifics to recommend a list of potential colleges that fit the criteria.<br><br>
-<strong>Projects:</strong>
-<div class="project-inline">
-<div class="project-title"><a href="#">Student Management Web App</a></div>
-<div class="project-meta">Fall 2023 – Spring 2024</div>
-<div class="project-desc">Full-stack Django application for managing student info, authentication, and college recommendations.</div>
+<div class="work-details"> Responsible for shelving and pulling holds according to the Library of Congress classification. Received patrons and answered questions regarding library guidelines and services.<br><br>
 </div>
 </div>
 </div>
